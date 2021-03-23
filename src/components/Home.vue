@@ -66,7 +66,7 @@
       </v-col>
       <v-spacer />
     </v-row>
-    <!-- Parallax -->
+    <!-- Parallax footer -->
     <v-parallax
       class="footer_parallax"
       src="https://firebasestorage.googleapis.com/v0/b/oqaatsit-database.appspot.com/o/northern_lights.png?alt=media&token=6b0d703e-7156-452e-bedd-78d37b8609e0"
