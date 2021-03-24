@@ -6,6 +6,7 @@
     >
     </v-parallax>
     <img
+      v-img
       class="top_image_mobile"
       src="https://firebasestorage.googleapis.com/v0/b/oqaatsit-database.appspot.com/o/IMG_20150531_151146.jpg?alt=media&token=1d7ea23b-fd36-4cbb-807f-e6f7c8d66c41"
       alt=""
@@ -100,6 +101,7 @@
     </div>
     <div class="copyright">&copy; Stinnia</div>
     <img
+      v-img
       class="top_image_mobile"
       src="https://firebasestorage.googleapis.com/v0/b/oqaatsit-database.appspot.com/o/northern_lights.png?alt=media&token=6b0d703e-7156-452e-bedd-78d37b8609e0"
       alt=""
@@ -159,6 +161,7 @@ export default {
         .then(
           (result) => {
             console.log("SUCCESS!", result.status, result.text);
+            alert("You have sent the email!");
           },
           (error) => {
             console.log("FAILED...", error);
@@ -218,6 +221,7 @@ img {
   margin: 0 auto;
   max-width: 600px;
   width: 100%;
+  z-index: 999;
 }
 
 .contact-form .form {

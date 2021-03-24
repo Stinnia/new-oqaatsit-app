@@ -6,6 +6,7 @@
     >
     </v-parallax>
     <img
+      v-img
       class="top_image_mobile"
       src="https://firebasestorage.googleapis.com/v0/b/oqaatsit-database.appspot.com/o/gr%C3%B8nland_animals.png?alt=media&token=d9b22a06-1ebe-4822-81b1-aca4886e50de"
       alt=""
@@ -234,6 +235,7 @@
     </div>
     <div class="copyright">&copy; Stinnia</div>
     <img
+      v-img
       class="top_image_mobile"
       src="https://firebasestorage.googleapis.com/v0/b/oqaatsit-database.appspot.com/o/footer_northernlight2.png?alt=media&token=f39afcc0-8a51-4e8e-8b24-b2acdb008424"
       alt=""

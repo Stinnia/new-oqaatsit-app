@@ -1,13 +1,14 @@
 <template>
   <v-container fluid id="About">
     <v-parallax
-      class="footer_parallax"
-      src="https://firebasestorage.googleapis.com/v0/b/oqaatsit-database.appspot.com/o/kalaallisuut_cropped.png?alt=media&token=10b558a4-0db7-4850-88ae-85eadee50c56"
+      class="about_parallax"
+      src="https://firebasestorage.googleapis.com/v0/b/oqaatsit-database.appspot.com/o/kalaallisuut_1920.png?alt=media&token=ecb0bd16-14ae-4fcd-a3c9-2835a04a6e34"
     >
     </v-parallax>
     <img
+      v-img
       class="top_image_mobile"
-      src="https://firebasestorage.googleapis.com/v0/b/oqaatsit-database.appspot.com/o/kalaallisuut_cropped.png?alt=media&token=10b558a4-0db7-4850-88ae-85eadee50c56"
+      src="https://firebasestorage.googleapis.com/v0/b/oqaatsit-database.appspot.com/o/kalaallisuut_1920.png?alt=media&token=ecb0bd16-14ae-4fcd-a3c9-2835a04a6e34"
       alt=""
     />
     <v-row no-gutters>
@@ -51,6 +52,11 @@
             it easier for you to learn and pronounce the Greenlandic words!
           </p>
           <br /><br />
+          <img
+            class="stinnia_image"
+            src="https://media-exp1.licdn.com/dms/image/C4D03AQFSyMzIOXa2oA/profile-displayphoto-shrink_800_800/0/1547468706592?e=1622073600&v=beta&t=-ElYevFqUgIHTG3330nhVK8NieCSBzpITZL3VIitVZs"
+            alt="Stinnia"
+          />
           <h2 class="text-center">Who am I?</h2>
           <p class="text-left">
             I am a Greenlandic woman studying in Cphbusiness. I have learned to
@@ -112,6 +118,7 @@
     </div>
     <div class="copyright">&copy; Stinnia</div>
     <img
+      v-img
       class="top_image_mobile"
       src="https://firebasestorage.googleapis.com/v0/b/oqaatsit-database.appspot.com/o/ningiu.jpg?alt=media&token=de6b2e65-34c8-4e67-9e07-848c38103ec4"
       alt=""
@@ -151,6 +158,11 @@ export default {
 #About {
   font-family: "Noto Sans", sans-serif;
 }
+
+.about_parallax {
+  height: 100vh;
+  width: 100%;
+}
 .v-sheet.v-card:not(.v-sheet--outlined) {
   box-shadow: none;
 }
@@ -164,6 +176,10 @@ export default {
 .el-table--group::after,
 .el-table::before {
   z-index: -1;
+}
+.stinnia_image {
+  width: 200px;
+  border-radius: 50%;
 }
 
 /* Contact form */
@@ -243,7 +259,7 @@ export default {
   .v-parallax {
     display: none;
   }
-  .frontpage_parallax_website {
+  .about_parallax {
     display: none;
   }
   .top_image_mobile {

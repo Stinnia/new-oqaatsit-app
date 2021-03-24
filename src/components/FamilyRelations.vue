@@ -6,6 +6,7 @@
     >
     </v-parallax>
     <img
+      v-img
       class="top_image_mobile"
       src="https://firebasestorage.googleapis.com/v0/b/oqaatsit-database.appspot.com/o/gr%C3%B8nland_familyrelations.png?alt=media&token=68ded4cb-c6cf-4057-855d-a7cbaae3eee0"
       alt=""
@@ -230,6 +231,7 @@
     </div>
     <div class="copyright">&copy; Stinnia</div>
     <img
+      v-img
       class="top_image_mobile"
       src="https://firebasestorage.googleapis.com/v0/b/oqaatsit-database.appspot.com/o/footer_northernlight3.png?alt=media&token=91b53328-12e8-467f-8786-707d6e72bb98"
       alt=""

@@ -5,6 +5,11 @@
       src="https://firebasestorage.googleapis.com/v0/b/oqaatsit-database.appspot.com/o/IMG_20150531_151146.jpg?alt=media&token=1d7ea23b-fd36-4cbb-807f-e6f7c8d66c41"
     >
     </v-parallax>
+    <img
+      class="top_image_mobile"
+      src="https://firebasestorage.googleapis.com/v0/b/oqaatsit-database.appspot.com/o/IMG_20150531_151146.jpg?alt=media&token=1d7ea23b-fd36-4cbb-807f-e6f7c8d66c41"
+      alt=""
+    />
     <!-- Spacer -->
     <br />
     <br />
@@ -41,7 +46,8 @@
               !search || data.name.toLowerCase().includes(search.toLowerCase())
           )
         "
-        style="width: 100%"
+        style="width: 60%; margin: 0 auto"
+        class="table_cities"
       >
         <el-table-column min-width="55" prop="image" label="Image">
           <template slot-scope="scope">
@@ -232,9 +238,24 @@ img {
   width: 250px;
   display: inline-block;
 }
+
+/* Parallax + media query image*/
+.top_image_mobile {
+  display: none;
+}
 @media only screen and (max-width: 600px) {
-  #Home {
+  .v-parallax {
+    display: none;
+  }
+  .frontpage_parallax_website {
+    display: none;
+  }
+  .top_image_mobile {
+    display: block;
     width: 100%;
+  }
+  .table_cities {
+    width: 100% !important;
   }
 }
 </style>
