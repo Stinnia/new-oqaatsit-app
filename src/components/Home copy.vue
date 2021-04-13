@@ -33,20 +33,6 @@
     <!-- End spacer -->
     <h2>Cities in Greenland</h2>
     <router-link to="/SignIn" align-left>Sign in to edit</router-link>
-    <v-row id="row_card">
-      <v-col md="6" v-for="city in citiesData" :key="city.id">
-        <v-card class="mx-auto slide">
-          <img v-img :src="city.image" />
-          <v-card-title class="justify-center">{{ city.name }} </v-card-title>
-          <v-card-text>Population: {{ city.population }}</v-card-text>
-
-          <audio controls>
-            <source :src="city.pronounciation" type="audio/mpeg" />
-          </audio>
-        </v-card>
-      </v-col>
-    </v-row>
-    <!--
     <el-table
       class="table_cities"
       :data="citiesData"
@@ -67,7 +53,6 @@
         </template>
       </el-table-column>
     </el-table>
-     -->
     <br /><br /><br /><br /><br />
     <v-row no-gutters>
       <v-spacer />
@@ -195,10 +180,6 @@ export default {
   font-family: "Noto Sans", sans-serif;
   padding: 0;
 }
-#row_card {
-  width: 60%;
-  margin: 0 auto;
-}
 .el-table .cell {
   font-family: "Noto Sans", sans-serif;
 }
@@ -207,7 +188,7 @@ export default {
   color: #2e75ad;
 }
 img {
-  width: 100%;
+  width: 90%;
 }
 .v-sheet.v-card.intro {
   background-color: rgba(46, 117, 173, 0.7);
@@ -308,10 +289,6 @@ img {
   .top_image_mobile {
     display: block;
     width: 100%;
-  }
-  #row_card {
-    width: 100%;
-    margin: 0 auto;
   }
   .footer_container {
     display: none;
