@@ -38,12 +38,10 @@
         <v-card class="mx-auto slide">
           <img v-img :src="city.image" />
           <v-card-title class="justify-center">{{ city.name }} </v-card-title>
-          <v-card-text>Population: {{ city.population }}</v-card-text>
-
-          <audio controls>
+          <audio controls="controls" preload="none">
             <source :src="city.pronounciation" type="audio/mpeg" />
+            <source :src="city.pronounciation" type="audio/mp4" />
           </audio>
-        </v-card>
       </v-col>
     </v-row>
     <!--
@@ -139,7 +137,7 @@ export default {
       search: "",
       image: "",
       pronounciation: "",
-
+      ogg: "",
       seen: true,
     };
   },
@@ -156,6 +154,7 @@ export default {
               population: doc.data().population,
               image: doc.data().image,
               pronounciation: doc.data().pronounciation,
+              ogg: doc.data().ogg,
             });
             console.log(doc.id, " => ", doc.data());
           });
@@ -199,9 +198,6 @@ export default {
   width: 60%;
   margin: 0 auto;
 }
-.el-table .cell {
-  font-family: "Noto Sans", sans-serif;
-}
 .v-application a {
   margin-left: 800px;
   color: #2e75ad;
@@ -217,12 +213,6 @@ img {
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   bottom: 42%;
-}
-
-.el-table--border::after,
-.el-table--group::after,
-.el-table::before {
-  z-index: -1;
 }
 
 /* Contact form */

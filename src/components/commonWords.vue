@@ -27,26 +27,22 @@
       </v-col>
       <v-spacer />
     </v-row>
-    <!-- Spacer -->
     <br />
     <br />
     <br />
-    <!-- End spacer -->
-    <h2>Common words in Greenlandic</h2>
-    <br /><br />
-
+    <!-- Category dropdown -->
     <CategoryNav />
+
+    <!-- Card  -->
     <div>
       <v-row id="row_card">
         <v-col md="6" v-for="word in commonwordsData" :key="word.id">
           <v-card class="mx-auto slide card_box">
-            <v-card-title class="justify-center primary--text"
-              >{{ word.English }}
-            </v-card-title>
-            <v-card-text>Greenlandic: {{ word.Greenlandic }}</v-card-text>
-
-            <audio controls>
+            <img v-img :src="word.image" />
+            <v-card-text> {{ word.Greenlandic }}</v-card-text>
+            <audio controls="controls" preload="none">
               <source :src="word.pronounciation" type="audio/mpeg" />
+              <source :src="word.pronounciation" type="audio/mp4" />
             </audio>
           </v-card>
         </v-col>
@@ -71,6 +67,7 @@ export default {
       english: "",
       commonwordsData: [],
       greenlandic: "",
+      image: "",
       pronounciation: "",
     };
   },
@@ -87,6 +84,7 @@ export default {
               id: doc.id,
               Greenlandic: doc.data().Greenlandic,
               English: doc.data().English,
+              image: doc.data().image,
               pronounciation: doc.data().pronounciation,
             });
             console.log(doc.id, " => ", doc.data());
@@ -117,8 +115,11 @@ export default {
   margin: 0 auto;
 }
 .card_box {
-  height: 270px;
+  height: 410px;
   margin: 0 auto;
+}
+img {
+  width: 100%;
 }
 
 /* Parallax + media query image*/
@@ -133,8 +134,25 @@ export default {
     display: block;
     width: 100%;
   }
+
+  .v-sheet.v-card.intro {
+    background-color: rgba(46, 117, 173, 0);
+    color: black;
+    margin-top: 10%;
+    border: none;
+  }
+  .v-sheet.v-card.outro {
+    background-color: rgba(197, 44, 54, 0);
+    color: black;
+    bottom: 0% !important;
+    border: none;
+  }
   #row_card {
     width: 100%;
+  }
+  .card_box {
+    height: auto;
+    margin: 0 auto;
   }
 }
 </style>

@@ -15,38 +15,33 @@
       <v-spacer />
       <v-col cols="12" sm="4" style="margin-top: -6%">
         <v-card class="pa-2 intro" outlined tile>
-          <h2>The most common words in Greenlandic</h2>
+          <h2>Members of the family in Greenlandic</h2>
           <p>
-            Are you looking to have a small talk in Greenlandic?<br />
-            Or are you just trying to learn a few words to impress your
-            Greenlandic speaking friends? <br />
-            Just go through the categories and see if you find eveything you
-            need!
+            In Greenlandic we have many different words for different family
+            members. Navigate through the words to find out how say the
+            different words.
           </p>
         </v-card>
       </v-col>
       <v-spacer />
     </v-row>
-    <!-- Spacer -->
     <br />
     <br />
     <br />
-    <!-- End spacer -->
-    <h2>Members of the family in Greenlandic</h2>
-    <br /><br />
 
+    <!-- Category dropdown -->
     <CategoryNav />
+
+    <!-- Card  -->
     <div>
       <v-row id="row_card">
         <v-col md="6" v-for="word in FamilyRelationsData" :key="word.id">
           <v-card class="mx-auto slide card_box">
-            <v-card-title class="justify-center primary--text"
-              >{{ word.English }}
-            </v-card-title>
-            <v-card-text>Greenlandic: {{ word.Greenlandic }}</v-card-text>
-
-            <audio controls>
+            <img v-img :src="word.image" />
+            <v-card-text> {{ word.Greenlandic }}</v-card-text>
+            <audio controls="controls" preload="none">
               <source :src="word.pronounciation" type="audio/mpeg" />
+              <source :src="word.pronounciation" type="audio/mp4" />
             </audio>
           </v-card>
         </v-col>
@@ -71,6 +66,7 @@ export default {
       english: "",
       FamilyRelationsData: [],
       greenlandic: "",
+      image: "",
       pronounciation: "",
     };
   },
@@ -87,6 +83,7 @@ export default {
               id: doc.id,
               Greenlandic: doc.data().Greenlandic,
               English: doc.data().English,
+              image: doc.data().image,
               pronounciation: doc.data().pronounciation,
             });
             console.log(doc.id, " => ", doc.data());
@@ -113,8 +110,11 @@ export default {
   margin: 0 auto;
 }
 .card_box {
-  height: 300px;
+  height: 470px;
   margin: 0 auto;
+}
+img {
+  width: 100%;
 }
 .v-sheet.v-card.intro {
   background-color: rgba(2, 120, 31, 0.7);
@@ -140,9 +140,18 @@ export default {
     margin-top: 10%;
     border: none;
   }
-
+  .v-sheet.v-card.outro {
+    background-color: rgba(197, 44, 54, 0);
+    color: black;
+    bottom: 0% !important;
+    border: none;
+  }
   #row_card {
     width: 100%;
+  }
+  .card_box {
+    height: auto;
+    margin: 0 auto;
   }
 }
 </style>
