@@ -35,13 +35,15 @@
     <router-link to="/SignIn" align-left>Sign in to edit</router-link>
     <v-row id="row_card">
       <v-col md="6" v-for="city in citiesData" :key="city.id">
-        <v-card class="mx-auto slide">
+        <v-card class="mx-auto slide card_city">
           <img v-img :src="city.image" />
           <v-card-title class="justify-center">{{ city.name }} </v-card-title>
+          <v-card-text>{{ city.info }}</v-card-text>
           <audio controls="controls" preload="none">
             <source :src="city.pronounciation" type="audio/mpeg" />
             <source :src="city.pronounciation" type="audio/mp4" />
           </audio>
+        </v-card>
       </v-col>
     </v-row>
     <!--
@@ -136,6 +138,7 @@ export default {
       population: "",
       search: "",
       image: "",
+      info: "",
       pronounciation: "",
       ogg: "",
       seen: true,
@@ -152,6 +155,7 @@ export default {
               id: doc.id,
               name: doc.data().name,
               population: doc.data().population,
+              info: doc.data().info,
               image: doc.data().image,
               pronounciation: doc.data().pronounciation,
               ogg: doc.data().ogg,
@@ -197,6 +201,9 @@ export default {
 #row_card {
   width: 60%;
   margin: 0 auto;
+}
+.card_city {
+  height: 550px;
 }
 .v-application a {
   margin-left: 800px;
@@ -302,6 +309,9 @@ img {
   #row_card {
     width: 100%;
     margin: 0 auto;
+  }
+  .card_city {
+    height: auto;
   }
   .footer_container {
     display: none;

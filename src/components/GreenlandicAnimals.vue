@@ -46,6 +46,9 @@
         <v-col md="6" v-for="word in GreenlandicAnimalsData" :key="word.id">
           <v-card class="mx-auto slide card_box">
             <img v-img :src="word.image" />
+            <v-card-title class="justify-center">
+              {{ word.English }}</v-card-title
+            >
             <v-card-text> {{ word.Greenlandic }}</v-card-text>
             <audio controls="controls" preload="none">
               <source :src="word.pronounciation" type="audio/mpeg" />
@@ -123,7 +126,7 @@ export default {
   margin: 0 auto;
 }
 .card_box {
-  height: 410px;
+  height: auto;
   margin: 0 auto;
 }
 img {
